@@ -1,0 +1,91 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/** CODIGO AQUI **/
+@media (min-width: 768px) {
+    /* Aplica los siguientes estilos solo cuando el ancho de la ventana del navegador es al menos 768px, adecuado para tabletas en modo paisaje y escritorios pequeños. */
+
+    .layout-shifter {
+        display: flex; /* Establece el modelo de caja a flexbox para el contenedor .layout-shifter. */
+        flex-direction: column-reverse; /* Ordena los elementos en dirección de columna pero invirtiendo el orden, poniendo el elemento conceptualmente inferior (como un sidebar) arriba. */
+        justify-content: space-between; /* Separa los elementos hijo dentro del contenedor maximizando el espacio entre ellos. */
+    }
+
+    .contenido-principal {
+        display: flex; /* Usa Flexbox también para el contenido principal. */
+        justify-content: space-between; /* Distribuye los elementos hijo (entradas del blog) igualmente, dejando espacio entre ellos. */
+    }
+
+    .entrada-blog {
+        flex: 0 0 calc(50% - 2rem); /* Establece la base flexible de cada entrada del blog al 50% del ancho del contenedor menos 2rem, para dos columnas de entradas con espacio entre ellas. */
+    }
+    
+}
+
+@media (min-width: 992px) {
+    /* Estilos para pantallas con un ancho mínimo de 992px, generalmente escritorios más grandes. */
+
+    .layout-shifter {
+        flex-direction: row; /* Cambia la dirección del flexbox a fila, colocando los elementos lado a lado en lugar de uno encima del otro. */
+    }
+
+    .contenido-principal {
+        flex: 0 0 calc(66.6% - 2rem); /* Ajusta el tamaño del contenido principal para ocupar aproximadamente dos tercios del ancho del contenedor, menos 2rem para el margen. */
+        flex-wrap: wrap; /* Permite que los elementos dentro del contenido principal se envuelvan en varias líneas si es necesario. */
+    }
+
+    .sidebar {
+        flex: 0 0 calc(33.3% - 2rem); /* Configura el sidebar para que ocupe aproximadamente un tercio del ancho del contenedor, menos 2rem para el margen. */
+        order: 2; /* Asegura que el sidebar se posicione después del contenido principal, incluso si está definido primero en el HTML. */
+    }
+
+    .entrada-blog {
+        flex: 0 0 100%; /* Cambia las entradas del blog para que cada una ocupe el 100% del ancho de la fila, efectivamente anulando la disposición en columnas múltiples. */
+    }
+}

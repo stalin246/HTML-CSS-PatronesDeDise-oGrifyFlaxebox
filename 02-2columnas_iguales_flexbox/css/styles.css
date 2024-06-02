@@ -1,0 +1,54 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/** CODIGO AQUI **/
+@media (min-width: 768px) {
+    /* Este bloque media query aplica estilos solo cuando el ancho de la ventana del navegador es al menos 768px, típicamente tabletas en modo paisaje y escritorios. */
+    
+    .dos__columnas {
+        display: flex; /* Establece el modelo de caja a flexbox, permitiendo un diseño más flexible de los elementos internos. */
+        justify-content: space-between; /* Distribuye el espacio restante de manera que separe cada hijo de flex al principio y al final del contenedor. Esto ayuda a maximizar el espacio entre los elementos dentro del contenedor .dos__columnas. */
+    }
+
+    .entrada-blog {
+        /* flex-basis: calc(50% - 1rem); Comentado, es un método alternativo para definir la base de flexión del elemento. */
+        flex: 0 0 calc(50% - 1rem); /* Aplica la propiedad flex para establecer la capacidad de crecimiento y encogimiento a 0, y establece una base flexible calculada para que cada entrada ocupe efectivamente la mitad del contenedor menos 1 rem. Esto asegura que dos entradas blog ocupen igual espacio con un espacio de 1 rem entre ellas. */
+    }
+}

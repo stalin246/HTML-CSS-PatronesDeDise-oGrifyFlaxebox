@@ -1,0 +1,72 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/** CODIGO AQUI **/
+@media (min-width: 768px) {
+    /* Esta consulta de medios aplica estilos solo cuando la ventana del navegador tiene un mínimo de 768px de ancho. */
+
+    .contenedor-grid {
+        display: grid; /* Establece el modelo de caja del contenedor a 'grid', lo cual es ideal para diseños complejos. */
+        grid-template-areas: "izquierda contenido derecha"; /* Define áreas nombradas dentro de la cuadrícula, lo que permite una referencia fácil y directa en la definición de la ubicación de los elementos. */
+        grid-template-columns: 1fr 3fr 1fr; /* Define las columnas como 1 fracción para la primera columna, 3 fracciones para la segunda (central), y 1 fracción para la tercera */
+        grid-auto-flow: column; /* Controla cómo se auto-colocan los elementos de la cuadrícula, aquí se asegura que el flujo sea horizontal y no vertical. */
+        column-gap: 2rem; /* Establece un espacio de 2 rem entre las columnas para asegurar una separación visual. */
+    }
+
+    .contenido-principal {
+        /* grid-column: 2/3; Ubica el contenido principal en la segunda columna de la cuadrícula.  */
+        grid-area: contenido; /* Asigna el área definida como 'contenido' en `grid-template-areas` para este elemento, que corresponde a la columna del medio. */
+    }
+
+    .sidebar-1 {
+        /* grid-column: 1/2;  Ubica la barra lateral en la primera columna de la cuadrícula.  */
+        grid-area: izquierda; /* Asigna el área definida como 'izquierda' en `grid-template-areas`, asegurando que este elemento ocupe la primera columna de la izquierda. */
+    }
+}

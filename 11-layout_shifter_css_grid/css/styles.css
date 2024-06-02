@@ -1,0 +1,94 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/** CODIGO AQUI **/
+@media (min-width: 768px) {
+    /* Estilos para pantallas con un ancho mínimo de 768px, generalmente para tabletas en modo paisaje y escritorios pequeños. */
+
+    .layout-shifter {
+        display: grid; /* Establece el modelo de caja a grid para el contenedor .layout-shifter. */
+        grid-template-areas: 
+            "contenido"        
+            "inferior"; /* Define las áreas de cuadrícula para alojar el contenido principal y el sidebar debajo. */
+    }
+
+    .sidebar {
+        grid-area: inferior; /* Asigna el sidebar al área denominada 'inferior', ubicándolo debajo del contenido principal. */
+    }
+
+    .contenido-principal {
+        grid-area: contenido; /* Asigna el área principal del contenido. */
+        display: grid; /* Utiliza un sub-grid dentro del contenido principal para una disposición adicional. */
+        grid-template-areas: "entrada1 entrada2"; /* Divide el contenido principal en dos áreas de entrada. */
+        grid-template-columns: repeat(2, 1fr); /* Establece dos columnas de igual tamaño. */
+        column-gap: 3rem; /* Establece un espacio de 3 rem entre las columnas para separar las entradas. */
+    }
+}
+
+@media (min-width: 962px) {
+    /* Estilos para pantallas con un ancho mínimo de 962px, adecuado para escritorios más grandes. */
+
+    .layout-shifter {
+        grid-template-areas: "contenido sidebar"; /* Reorganiza las áreas para colocar el sidebar al lado del contenido, en lugar de debajo. */
+        column-gap: 2rem; /* Establece un espacio de 2 rem entre el contenido principal y el sidebar. */
+    }
+
+    .sidebar {
+        grid-area: sidebar; /* Ubica el sidebar en el área llamada 'sidebar'. */
+    }
+
+    .contenido-principal {
+        grid-area: contenido; /* Confirma que el contenido principal sigue en su área designada. */
+        grid-template-areas: 
+            "entrada1"
+            "entrada2"; /* Cambia la organización interna del contenido principal para que las entradas estén una sobre la otra, en lugar de lado a lado. */
+        grid-template-columns: unset; /* Elimina cualquier configuración previa de las columnas, lo que permite que las entradas ocupen el ancho completo del área. */
+    }
+}

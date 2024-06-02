@@ -1,0 +1,74 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/** CODIGO AQUI **/
+/* Estilos para pantallas con un ancho mínimo de 480px */
+@media (min-width: 480px) {
+    .column-drop-flex {
+        display: flex; /* Establece el modelo de caja a Flexbox para permitir un diseño más flexible y responsive. */
+        justify-content: space-between; /* Alinea los elementos internos del contenedor de manera que haya un espacio máximo entre el primer y último elemento. */
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas, en lugar de forzarlos a estar en una sola línea. */
+    }
+
+    .contenido-principal, 
+    .primera {
+        flex-basis: calc(50% - 1rem); /* Establece el tamaño base de estos elementos al 50% del contenedor menos 1 rem, para asegurar espacio entre los elementos cuando están en la misma línea. */
+    }
+    
+}
+
+/* Estilos para pantallas con un ancho mínimo de 768px */
+@media (min-width: 768px) {
+    .contenido-principal,
+    .primera,
+    .segunda {
+        flex: 0 0 calc(33% - 1rem); /* Configura a los elementos para que no crezcan ni se encojan más allá de su tamaño base, que es un tercio del contenedor menos 1 rem. Esto garantiza que los elementos ocupen tres columnas iguales con espacio entre ellos. */
+    }
+    
+}

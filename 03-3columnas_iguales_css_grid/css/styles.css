@@ -1,0 +1,50 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/** CODIGO AQUI **/
+@media (min-width: 768px) {
+    /* Esta consulta de medios especifica que los siguientes estilos solo se aplicarán en dispositivos o ventanas de navegador con un ancho mínimo de 768px, generalmente considerado el punto de interrupción para tabletas en modo paisaje y escritorios. */
+
+    .tres__columnas {
+        display: grid; /* Establece el modelo de diseño a cuadrícula para el contenedor, permitiendo un control detallado sobre la disposición de los elementos internos en forma de cuadrícula. */
+        grid-template-columns: repeat(3, 1fr); /* Crea tres columnas de igual ancho dentro del contenedor. La función 'repeat(3, 1fr)' simplifica la declaración de tres columnas que cada una toma una fracción del espacio disponible (1fr). */
+        column-gap: 2rem; /* Establece un espacio de 2 rem entre las columnas, proporcionando un margen visualmente agradable y espacio para respirar entre los elementos de la cuadrícula. */
+    }
+}

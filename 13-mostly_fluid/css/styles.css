@@ -1,0 +1,62 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/** CODIGO AQUI **/
+.contenedor {
+    max-width: 120rem; /* Establece un ancho máximo para el contenedor de 120rem, lo que controla su expansión en pantallas grandes. */
+    margin: 0 auto; /* Centra el contenedor horizontalmente en la página al ajustar automáticamente los márgenes izquierdo y derecho. */
+    width: 95%; /* Establece el ancho inicial del contenedor al 95% del ancho de su contenedor padre, dando un poco de margen en los lados. */
+}
+
+@media (min-width: 768px) {
+    .contenedor {
+        width: 80%; /* Reduce el ancho del contenedor al 80% para pantallas de al menos 768px de ancho, típicamente tabletas en modo paisaje y escritorios pequeños. */
+    }
+    
+}
+
+@media (min-width: 992px) {
+    .contenedor {
+        width: 60%; /* Reduce aún más el ancho del contenedor al 60% para pantallas de al menos 992px de ancho, adecuado para escritorios estándar. */
+    }
+    
+}
+
+img {
+    max-width: 100%; /* Asegura que todas las imágenes sean responsivas y no se extiendan más allá de su contenedor, lo que mejora la accesibilidad y mantiene la integridad visual del diseño. */
+}

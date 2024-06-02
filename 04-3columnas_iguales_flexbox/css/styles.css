@@ -1,0 +1,56 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/** CODIGO AQUI **/
+
+@media (min-width: 768px) {
+    /* La consulta de medios asegura que estos estilos solo se apliquen en dispositivos o ventanas de navegador con un ancho mínimo de 768px. Esto es típicamente donde las tabletas en modo paisaje y los dispositivos más grandes comienzan. */
+
+    .tres__columnas {
+        display: flex; /* Cambia el modelo de caja del contenedor a flex, lo que permite un diseño más adaptable y alineado de los elementos internos. */
+        /* gap: 2rem; Comentado, indica que originalmente se consideró añadir un espacio de 2 rem entre los elementos flex, pero fue descartado o reemplazado. */
+        justify-content: space-between; /* Distribuye los elementos hijos dentro del contenedor de manera que haya un espacio máximo entre ellos, alineando el primer elemento al inicio y el último al final del contenedor. */
+    }
+
+    .entrada-blog {
+        flex: 0 0 calc(33% - 3rem); /* Define la base flexible de cada entrada del blog a un tercio del contenedor menos 3 rem. 
+                                       '0 0' previene que los elementos crezcan ('flex-grow') o se encojan ('flex-shrink') más allá de su tamaño base. */
+    }
+}
